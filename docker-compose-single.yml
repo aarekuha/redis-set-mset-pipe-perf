@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  redis_single_test:
+    container_name: redis_single_test
+    image: docker.io/bitnami/redis
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+    ports:
+      - '8379:6379'
+    volumes:
+      - 'redis_single_data:/bitnami/redis/data'
+
+volumes:
+  redis_single_data:
+    driver: local
